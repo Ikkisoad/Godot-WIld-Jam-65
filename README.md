@@ -1,2 +1,2 @@
-# Godot WIld Jam 65
+# Godot Wild Jam 65
  
