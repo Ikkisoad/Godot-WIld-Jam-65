@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://rcxwkai6mlla"]
+
+[ext_resource type="Texture2D" uid="uid://dnqeu2nvirwex" path="res://icon.svg" id="1_irrr2"]
+[ext_resource type="Script" path="res://Scenes/rePackageRigidBody2D.gd" id="1_os7ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxi5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojt4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_irrr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ReleasedPakcage" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_os7ps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_isxi5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+scale = Vector2(0.296875, 0.265625)
+sprite_frames = SubResource("SpriteFrames_ojt4f")
