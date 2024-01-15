@@ -18,6 +18,8 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("up"):
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_pressed("down"):
+		velocity.y = -JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
