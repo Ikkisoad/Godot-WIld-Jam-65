@@ -1,16 +1,30 @@
 extends CharacterBody2D
 
+@onready var timer = $Timer
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -280.0
 const MAX_Y_VELOCITY = 250
 const DOWN_VELOCITY = 100
-
+const package = preload("res://Scenes/released_pakcage.tscn")
 #Speed up the plane fall
 const GRAVITY_MULTIPLIER = 1.8
+
+var packageCount = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+#func _ready():
+	#package = preload("res://Scenes/package.tscn")
+
+func _process(delta):
+	if Input.is_action_pressed("release") && timer.is_stopped() && packageCount > 0:
+		packageCount -= 1
+		var releasePackage = package.instantiate()
+		releasePackage.global_position.y += 50
+		add_child(releasePackage)
+		timer.start()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -40,3 +54,5 @@ func Die():
 #func rotate():
 	#rotation = 
 	#pass
+func collectPackage():
+	packageCount += 1
