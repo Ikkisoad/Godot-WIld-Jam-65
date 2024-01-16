@@ -14,6 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(PLAYER_GROUP):
 		body.Die()
 
-func _on_screen_exited() -> void:
-	#queue_free()
-	pass
+func _on_visible_screen_exited() -> void:
+	queue_free()
+

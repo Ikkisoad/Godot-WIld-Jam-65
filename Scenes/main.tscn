@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xc8t6u507cqd"]
+[gd_scene load_steps=8 format=3 uid="uid://xc8t6u507cqd"]
 
 [ext_resource type="PackedScene" uid="uid://cqtrdkxlpceen" path="res://Scenes/player.tscn" id="1_r6k3x"]
 [ext_resource type="PackedScene" uid="uid://divsfyh5qki2a" path="res://Scenes/package.tscn" id="2_5sxe3"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://scblduqim57u" path="res://Scenes/obstacle_area.tscn" id="5_mf4rs"]
 [ext_resource type="PackedScene" uid="uid://b7aufiipletp3" path="res://Scenes/PackageReceptor.tscn" id="6_itoak"]
 [ext_resource type="PackedScene" uid="uid://cg6t4spgk1qw" path="res://Scenes/ingame_hud.tscn" id="7_iydhu"]
-[ext_resource type="PackedScene" uid="uid://bmx72x1u6cfw2" path="res://Scenes/spawner.tscn" id="8_int86"]
 
 [node name="Main" type="Node2D"]
 
@@ -24,12 +23,9 @@ position = Vector2(788, 494)
 position = Vector2(938, 33)
 
 [node name="ObjectArea" parent="." instance=ExtResource("5_mf4rs")]
-position = Vector2(1280, 120)
+position = Vector2(1196, 135)
 
 [node name="PackageReceptor" parent="." instance=ExtResource("6_itoak")]
 position = Vector2(789, 213)
 
 [node name="IngameHUD" parent="." instance=ExtResource("7_iydhu")]
-
-[node name="Spawner" parent="." instance=ExtResource("8_int86")]
-position = Vector2(1192, 0)

@@ -4,22 +4,20 @@
 [ext_resource type="Script" path="res://Scenes/obstacle_area.gd" id="1_ya4tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sfkv"]
-size = Vector2(25, 262)
+size = Vector2(30, 262)
 
-[node name="Obstacle" type="Node2D"]
-
-[node name="ObstacleArea" type="Area2D" parent="."]
+[node name="ObstacleArea" type="Area2D"]
 script = ExtResource("1_ya4tx")
 
-[node name="ObstacleSprite" type="Sprite2D" parent="ObstacleArea"]
+[node name="ObstacleSprite" type="Sprite2D" parent="."]
 modulate = Color(0.192157, 0.192157, 0.192157, 1)
 scale = Vector2(0.2, 2)
 texture = ExtResource("1_aww67")
 
-[node name="ObstacleShape" type="CollisionShape2D" parent="ObstacleArea"]
+[node name="ObstacleShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3sfkv")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="ObstacleArea"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[connection signal="body_entered" from="ObstacleArea" to="ObstacleArea" method="_on_body_entered"]
-[connection signal="screen_exited" from="ObstacleArea/VisibleOnScreenEnabler2D" to="ObstacleArea" method="_on_screen_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_screen_exited"]
