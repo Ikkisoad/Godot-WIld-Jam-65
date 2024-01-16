@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmx72x1u6cfw2"]
+
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_e4dch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjayn"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_e4dch")
+
+[node name="1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1"]
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3"]
+position = Vector2(0, 128)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4"]
+position = Vector2(0, 192)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5"]
+position = Vector2(0, 256)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6"]
+position = Vector2(0, 320)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7"]
+position = Vector2(0, 384)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="8" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8"]
+position = Vector2(0, 448)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9"]
+position = Vector2(0, 512)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="10" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="10"]
+position = Vector2(0, 576)
+shape = SubResource("RectangleShape2D_gjayn")
+
+[node name="11" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="11"]
+position = Vector2(0, 640)
+shape = SubResource("RectangleShape2D_gjayn")

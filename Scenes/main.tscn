@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://biu65rj6tid0f" path="res://Scenes/paralax_background_1.tscn" id="3_lo5e1"]
 [ext_resource type="PackedScene" uid="uid://rcxwkai6mlla" path="res://Scenes/released_pakcage.tscn" id="4_iqu02"]
 [ext_resource type="PackedScene" uid="uid://scblduqim57u" path="res://Scenes/obstacle_area.tscn" id="5_mf4rs"]
-[ext_resource type="PackedScene" path="res://Scenes/PackageReceptor.tscn" id="6_itoak"]
+[ext_resource type="PackedScene" uid="uid://b7aufiipletp3" path="res://Scenes/PackageReceptor.tscn" id="6_itoak"]
 [ext_resource type="PackedScene" uid="uid://cg6t4spgk1qw" path="res://Scenes/ingame_hud.tscn" id="7_iydhu"]
 
 [node name="Main" type="Node2D"]
