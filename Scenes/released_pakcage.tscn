@@ -18,7 +18,7 @@ animations = [{
 
 [node name="ReleasedPakcage" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Package"]]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 script = ExtResource("1_os7ps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]

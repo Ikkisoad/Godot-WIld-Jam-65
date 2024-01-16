@@ -24,7 +24,7 @@ position = Vector2(788, 494)
 position = Vector2(938, 33)
 
 [node name="ObjectArea" parent="." instance=ExtResource("5_mf4rs")]
-position = Vector2(1280, 120)
+position = Vector2(1089, 133)
 
 [node name="PackageReceptor" parent="." instance=ExtResource("6_itoak")]
 position = Vector2(789, 213)
@@ -32,4 +32,4 @@ position = Vector2(789, 213)
 [node name="IngameHUD" parent="." instance=ExtResource("7_iydhu")]
 
 [node name="Spawner" parent="." instance=ExtResource("8_int86")]
-position = Vector2(1192, 0)
+position = Vector2(1216, 0)

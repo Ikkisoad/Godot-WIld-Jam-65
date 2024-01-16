@@ -1,5 +1,7 @@
 extends Node2D
 
+var spawnRate = 1
+
 @onready var _1 = $"1"
 @onready var _2 = $"2"
 @onready var _3 = $"3"
@@ -16,20 +18,20 @@ const package = preload("res://Scenes/package.tscn")
 const obstacle = preload("res://Scenes/obstacle_area.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().create_timer(randi_range(0,20)).timeout.connect(spawnPackage)
-	get_tree().create_timer(randi_range(0,20)).timeout.connect(spawnObstacle)
+	get_tree().create_timer(randi_range(0,spawnRate)).timeout.connect(spawnPackage)
+	get_tree().create_timer(randi_range(0,spawnRate)).timeout.connect(spawnObstacle)
 
 func spawnPackage():
 		var releasePackage = package.instantiate()
-		releasePackage.global_position = getSpawnPoisition
+		releasePackage.global_position = getSpawnPoisition()
 		add_child(releasePackage)
-		get_tree().create_timer(randi_range(0,20)).timeout.connect(spawnPackage)
+		get_tree().create_timer(randi_range(0,spawnRate)).timeout.connect(spawnPackage)
 		
 func spawnObstacle():
 		var spawnedObstacle = obstacle.instantiate()
-		spawnedObstacle.global_position = getSpawnPoisition
+		spawnedObstacle.global_position = getSpawnPoisition()
 		add_child(spawnedObstacle)
-		get_tree().create_timer(randi_range(0,20)).timeout.connect(spawnObstacle)
+		get_tree().create_timer(randi_range(0,spawnRate)).timeout.connect(spawnObstacle)
 
 func getSpawnPoisition():
 	return Vector2(randi_range(0,1200), randi_range(0,640))

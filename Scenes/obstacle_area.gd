@@ -5,6 +5,7 @@ const PLAYER_GROUP = "player"
 
 func _process(delta: float) -> void:
 	ScrollTheObject(delta)
+	print("something")
 
 func ScrollTheObject(deltaTime: float):
 	position.x -= scrollingSpeed * deltaTime
@@ -14,4 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.Die()
 
 func _on_screen_exited() -> void:
-	queue_free()
+	#queue_free()
+	pass
