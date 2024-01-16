@@ -34,3 +34,4 @@ position = Vector2(2, -3)
 shape = SubResource("RectangleShape2D_pupwq")
 
 [node name="releaseTimer" type="Timer" parent="CharacterBody2D"]
+one_shot = true
