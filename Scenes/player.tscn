@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqtrdkxlpceen"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerCharacterBody2D.gd" id="1_0uhlm"]
-[ext_resource type="Texture2D" uid="uid://dnqeu2nvirwex" path="res://icon.svg" id="1_bquey"]
+[ext_resource type="Texture2D" uid="uid://bxgii7b0bi06n" path="res://Sprites/airship.png" id="2_xsp2w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgufg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bquey")
+"texture": ExtResource("2_xsp2w")
 }],
 "loop": true,
 "name": &"default",
@@ -24,9 +24,11 @@ script = ExtResource("1_0uhlm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -3)
-scale = Vector2(0.96875, 0.265625)
+scale = Vector2(0.15, 0.110874)
 sprite_frames = SubResource("SpriteFrames_bgufg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(2, -3)
 shape = SubResource("RectangleShape2D_pupwq")
+
+[node name="Timer" type="Timer" parent="CharacterBody2D"]

@@ -8,5 +8,5 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	body.collectPackage()
 	queue_free()
-	pass # Replace with function body.

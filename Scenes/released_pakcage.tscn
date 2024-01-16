@@ -16,12 +16,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Package"]]
+[node name="ReleasedPakcage" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 script = ExtResource("1_os7ps")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_isxi5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 scale = Vector2(0.296875, 0.265625)
 sprite_frames = SubResource("SpriteFrames_ojt4f")
