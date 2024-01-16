@@ -27,5 +27,6 @@ shape = SubResource("RectangleShape2D_usthb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 scale = Vector2(0.203125, 0.1875)
 sprite_frames = SubResource("SpriteFrames_0aguj")
+frame_progress = 0.0170047
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
