@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7aufiipletp3"]
+
+[ext_resource type="Texture2D" uid="uid://dnqeu2nvirwex" path="res://icon.svg" id="1_5d7gc"]
+[ext_resource type="Script" path="res://Scenes/PackageReceptor.gd" id="1_l1oh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf72i"]
+size = Vector2(36, 37)
+
+[node name="PackageReceptor" type="Area2D"]
+scale = Vector2(2, 1)
+script = ExtResource("1_l1oh7")
+
+[node name="ReceptorSprite" type="Sprite2D" parent="."]
+modulate = Color(0.105882, 0.721569, 0.0862745, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_5d7gc")
+
+[node name="ReceptorShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_tf72i")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

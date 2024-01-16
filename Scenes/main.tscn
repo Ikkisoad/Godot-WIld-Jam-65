@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://xc8t6u507cqd"]
+[gd_scene load_steps=7 format=3 uid="uid://xc8t6u507cqd"]
 
 [ext_resource type="PackedScene" uid="uid://cqtrdkxlpceen" path="res://Scenes/player.tscn" id="1_r6k3x"]
 [ext_resource type="PackedScene" uid="uid://divsfyh5qki2a" path="res://Scenes/package.tscn" id="2_5sxe3"]
 [ext_resource type="PackedScene" uid="uid://biu65rj6tid0f" path="res://Scenes/paralax_background_1.tscn" id="3_lo5e1"]
 [ext_resource type="PackedScene" uid="uid://rcxwkai6mlla" path="res://Scenes/released_pakcage.tscn" id="4_iqu02"]
 [ext_resource type="PackedScene" uid="uid://scblduqim57u" path="res://Scenes/obstacle_area.tscn" id="5_mf4rs"]
+[ext_resource type="PackedScene" uid="uid://b7aufiipletp3" path="res://Scenes/PackageReceptor.tscn" id="6_itoak"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,3 +21,6 @@ position = Vector2(938, 33)
 
 [node name="ObjectArea" parent="." instance=ExtResource("5_mf4rs")]
 position = Vector2(1089, 133)
+
+[node name="PackageReceptor" parent="." instance=ExtResource("6_itoak")]
+position = Vector2(789, 213)
