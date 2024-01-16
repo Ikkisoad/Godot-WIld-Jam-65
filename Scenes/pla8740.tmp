@@ -33,4 +33,4 @@ sprite_frames = SubResource("SpriteFrames_bgufg")
 position = Vector2(2, -3)
 shape = SubResource("RectangleShape2D_pupwq")
 
-[node name="releaseTimer" type="Timer" parent="CharacterBody2D"]
+[node name="Timer" type="Timer" parent="CharacterBody2D"]

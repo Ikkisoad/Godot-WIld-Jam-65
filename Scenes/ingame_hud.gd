@@ -1,11 +1,26 @@
 extends Control
 
+@onready var score = $score
+@onready var _1 = $"1"
+@onready var _2 = $"2"
+@onready var _3 = $"3"
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var lives = 3
 
+var scoreCount = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func updateScore(value):
+	scoreCount += value
+	score.text = str(scoreCount)
+
+func updateLives():
+	lives -= 1
+	#if lives <= 0:
+	#I think that is useful to put here the death/gameOver sequence. e.g animation pause, set_process(false) etc etc
+	match lives:
+		2:
+			_3.visible = false
+		1:
+			_2.visible = false
+		0:
+			_1.visible = false
