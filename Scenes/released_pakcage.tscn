@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://rcxwkai6mlla"]
 
-[ext_resource type="Texture2D" uid="uid://dnqeu2nvirwex" path="res://icon.svg" id="1_irrr2"]
 [ext_resource type="Script" path="res://Scenes/rePackageRigidBody2D.gd" id="1_os7ps"]
+[ext_resource type="Texture2D" uid="uid://kfwn1x1744a5" path="res://Sprites/00.png" id="2_wivev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isxi5"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_irrr2")
+"texture": ExtResource("2_wivev")
 }],
 "loop": true,
 "name": &"default",
@@ -25,5 +25,5 @@ script = ExtResource("1_os7ps")
 shape = SubResource("RectangleShape2D_isxi5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
-scale = Vector2(0.296875, 0.265625)
+scale = Vector2(0.533, 0.489)
 sprite_frames = SubResource("SpriteFrames_ojt4f")

@@ -5,7 +5,6 @@ const PLAYER_GROUP = "player"
 
 func _process(delta: float) -> void:
 	ScrollTheObject(delta)
-	print("something")
 
 func ScrollTheObject(deltaTime: float):
 	position.x -= scrollingSpeed * deltaTime

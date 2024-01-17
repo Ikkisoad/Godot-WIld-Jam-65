@@ -30,15 +30,15 @@ func _process(delta):
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta * GRAVITY_MULTIPLIER
-		if velocity.y > MAX_Y_VELOCITY:
-			velocity.y = MAX_Y_VELOCITY
+	#if not is_on_floor():
+		#velocity.y += gravity * delta * GRAVITY_MULTIPLIER
+		#if velocity.y > MAX_Y_VELOCITY:
+			#velocity.y = MAX_Y_VELOCITY
 
-	if Input.is_action_pressed("up"):
-		velocity.y = JUMP_VELOCITY
-	if Input.is_action_pressed("down"):
-		velocity.y += DOWN_VELOCITY
+	#if Input.is_action_pressed("up"):
+		#velocity.y = JUMP_VELOCITY
+	#if Input.is_action_pressed("down"):
+		#velocity.y += DOWN_VELOCITY
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
@@ -46,6 +46,11 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	direction = Input.get_axis("up", "down")
+	if direction:
+		velocity.y = direction * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
 

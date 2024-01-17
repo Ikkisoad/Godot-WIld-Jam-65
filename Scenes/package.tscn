@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://divsfyh5qki2a"]
 
 [ext_resource type="Script" path="res://Scenes/PackageArea2D.gd" id="1_j4dyj"]
-[ext_resource type="Texture2D" uid="uid://dnqeu2nvirwex" path="res://icon.svg" id="1_nxs2b"]
+[ext_resource type="Texture2D" uid="uid://kfwn1x1744a5" path="res://Sprites/00.png" id="2_uqt3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usthb"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nxs2b")
+"texture": ExtResource("2_uqt3f")
 }],
 "loop": true,
 "name": &"default",
@@ -25,7 +25,7 @@ script = ExtResource("1_j4dyj")
 shape = SubResource("RectangleShape2D_usthb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-scale = Vector2(0.203125, 0.1875)
+scale = Vector2(0.533333, 0.533333)
 sprite_frames = SubResource("SpriteFrames_0aguj")
 frame_progress = 0.0170047
 

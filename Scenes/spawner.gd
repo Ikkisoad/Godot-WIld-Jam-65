@@ -1,6 +1,6 @@
 extends Node2D
 
-var spawnRate = 1
+@export var spawnRate = 1
 
 @onready var _1 = $"1"
 @onready var _2 = $"2"
