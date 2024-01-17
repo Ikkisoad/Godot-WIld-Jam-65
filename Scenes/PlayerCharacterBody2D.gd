@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var timer = $releaseTimer
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -280.0
@@ -12,8 +13,6 @@ const GRAVITY_MULTIPLIER = 1.8
 var spawnPosition = Vector2(0,0)
 @onready var collision_shape_2d = $CollisionShape2D
 
-var packageCount = 0
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -21,8 +20,7 @@ func _ready():
 	spawnPosition = global_position
 
 func _process(delta):
-	if Input.is_action_pressed("release") && timer.is_stopped() && packageCount > 0:
-		packageCount -= 1
+	if Input.is_action_pressed("release") && timer.is_stopped() && Autoload.packages > 0:
 		var releasePackage = package.instantiate()
 		releasePackage.global_position.y += 50
 		add_child(releasePackage)
@@ -55,7 +53,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func Die():
-	get_parent().updateLives()
+	animated_sprite_2d.modulate = Color(Color.WHITE,0.5)
+	Autoload.playerDeath()
 	setInvul(true)
 	get_tree().create_timer(3).timeout.connect(endInvul)
 	global_position = spawnPosition
@@ -66,10 +65,10 @@ func setInvul(value):
 	collision_shape_2d.set_deferred("disabled", value)
 	
 func endInvul():
+	animated_sprite_2d.modulate = Color.WHITE
 	collision_shape_2d.set_deferred("disabled", false)
 #func rotate():
 	#rotation = 
 	#pass
 func collectPackage():
-	get_parent().updateScore(10)
-	packageCount += 1
+	Autoload.collectPackage()
