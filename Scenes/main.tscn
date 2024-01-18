@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://xc8t6u507cqd"]
+[gd_scene load_steps=10 format=3 uid="uid://xc8t6u507cqd"]
 
 [ext_resource type="PackedScene" uid="uid://cqtrdkxlpceen" path="res://Scenes/player.tscn" id="1_r6k3x"]
 [ext_resource type="PackedScene" uid="uid://divsfyh5qki2a" path="res://Scenes/package.tscn" id="2_5sxe3"]
 [ext_resource type="PackedScene" uid="uid://biu65rj6tid0f" path="res://Scenes/paralax_background_1.tscn" id="3_lo5e1"]
 [ext_resource type="PackedScene" uid="uid://rcxwkai6mlla" path="res://Scenes/released_pakcage.tscn" id="4_iqu02"]
 [ext_resource type="PackedScene" uid="uid://scblduqim57u" path="res://Scenes/obstacle_area.tscn" id="5_mf4rs"]
-[ext_resource type="PackedScene" uid="uid://b7aufiipletp3" path="res://Scenes/PackageReceptor.tscn" id="6_itoak"]
 [ext_resource type="PackedScene" uid="uid://cg6t4spgk1qw" path="res://Scenes/ingame_hud.tscn" id="7_iydhu"]
 [ext_resource type="PackedScene" uid="uid://bmx72x1u6cfw2" path="res://Scenes/spawner.tscn" id="8_5vr4f"]
+[ext_resource type="PackedScene" uid="uid://c52bb7yo5w8q3" path="res://Scenes/receptors_spawner.tscn" id="9_87dwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sneci"]
+size = Vector2(1163, 46)
 
 [node name="Main" type="Node2D"]
 
@@ -25,11 +28,26 @@ position = Vector2(938, 33)
 
 [node name="ObjectArea" parent="." instance=ExtResource("5_mf4rs")]
 position = Vector2(1196, 135)
-
-[node name="PackageReceptor" parent="." instance=ExtResource("6_itoak")]
-position = Vector2(789, 213)
+collision_layer = 8
 
 [node name="IngameHUD" parent="." instance=ExtResource("7_iydhu")]
 
 [node name="Spawner" parent="." instance=ExtResource("8_5vr4f")]
 position = Vector2(1248, -6)
+
+[node name="ReceptorSpawner" parent="." instance=ExtResource("9_87dwk")]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="FloorCollision" type="CollisionShape2D" parent="Floor"]
+position = Vector2(588, 625)
+shape = SubResource("RectangleShape2D_sneci")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(0, -28)
+collision_layer = 32
+
+[node name="CeillingCollision" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(588, 9)
+shape = SubResource("RectangleShape2D_sneci")

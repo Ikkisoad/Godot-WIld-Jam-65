@@ -8,6 +8,8 @@ size = Vector2(36, 37)
 
 [node name="PackageReceptor" type="Area2D"]
 scale = Vector2(2, 1)
+collision_layer = 16
+collision_mask = 4
 script = ExtResource("1_l1oh7")
 
 [node name="ReceptorSprite" type="Sprite2D" parent="."]

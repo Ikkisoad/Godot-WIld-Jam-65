@@ -19,6 +19,8 @@ animations = [{
 [node name="Package" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 17
 script = ExtResource("1_j4dyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

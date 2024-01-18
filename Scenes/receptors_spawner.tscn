@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c52bb7yo5w8q3"]
+
+[ext_resource type="Script" path="res://Scenes/receptors_spawner.gd" id="1_xeibm"]
+[ext_resource type="PackedScene" uid="uid://b7aufiipletp3" path="res://Scenes/PackageReceptor.tscn" id="2_gtqv1"]
+
+[node name="ReceptorSpawner" type="Node2D"]
+position = Vector2(0, -2)
+script = ExtResource("1_xeibm")
+receptors = ExtResource("2_gtqv1")
+
+[node name="SpawnerPos" type="Marker2D" parent="."]
+position = Vector2(1255, 580)
+gizmo_extents = 52.3
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="ReceptorsHolder" type="Node" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

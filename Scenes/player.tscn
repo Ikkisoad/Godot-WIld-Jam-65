@@ -22,6 +22,7 @@ size = Vector2(44, 26)
 script = ExtResource("1_0qyt6")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+collision_mask = 46
 script = ExtResource("1_0uhlm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]

@@ -1,9 +1,9 @@
 extends Area2D
 
-const xSpeed = 0.5
+const xSpeed = 3.5
 const PACKAGE_GP_NAME = "Package" 
 
-func _physics_process(delta):
+func _process(delta):
 	position.x -= xSpeed
 
 func _on_body_entered(body: Node2D) -> void:
