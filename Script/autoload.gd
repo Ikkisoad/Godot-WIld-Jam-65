@@ -7,7 +7,7 @@ var packages = 0
 signal scoreCounted()
 signal packageCollected()
 signal died()
-
+signal on_overload
 
 func countScore(value):
 	score += value
@@ -17,6 +17,8 @@ func collectPackage():
 	score += 10
 	packages += 1
 	packageCollected.emit()
+	if packages >= 5:
+		on_overload.emit()
 
 func playerDeath():
 	lives -= 1

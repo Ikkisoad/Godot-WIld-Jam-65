@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	spawnPosition = global_position
+	Autoload.on_overload.connect(OverloadSequence)
 
 func _process(delta):
 	if Input.is_action_pressed("release") && timer.is_stopped() && Autoload.packages > 0:
@@ -74,3 +75,6 @@ func endInvul():
 	#pass
 func collectPackage():
 	Autoload.collectPackage()
+
+func OverloadSequence():
+	print("Overloaded Code goes here")
