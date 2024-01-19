@@ -17,6 +17,7 @@ func _ready():
 	Autoload.scoreCounted.connect(updateScore)
 	Autoload.packageCollected.connect(updateScore)
 	Autoload.died.connect(updateLives)
+	Autoload.packageCollected.connect(updatePackages)
 
 func updateScore():
 	score.text = str(Autoload.score)
@@ -32,13 +33,13 @@ func updateLives():
 			
 func updatePackages():
 	match Autoload.packages:
-		4:
-			package_5.visible = false
-		3:
-			package_4.visible = false
-		2:
-			package_3.visible = false
 		1:
-			package_2.visible = false
-		0:
 			package_1.visible = false
+		2:
+			package_2.visible = false
+		3:
+			package_3.visible = false
+		4:
+			package_4.visible = false
+		5:
+			package_5.visible = false

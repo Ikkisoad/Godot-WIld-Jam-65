@@ -8,6 +8,7 @@ signal scoreCounted()
 signal packageCollected()
 signal died()
 
+
 func countScore(value):
 	score += value
 	scoreCounted.emit()
@@ -20,3 +21,6 @@ func collectPackage():
 func playerDeath():
 	lives -= 1
 	died.emit()
+	
+func RemovePackages(value : float) -> void:
+	packages -= value

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var timer = $releaseTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+const PACKAGES_REMOVED = 1
 const SPEED = 300.0
 const JUMP_VELOCITY = -280.0
 const MAX_Y_VELOCITY = 250
@@ -25,7 +26,8 @@ func _process(delta):
 		releasePackage.global_position.y += 50
 		add_child(releasePackage)
 		timer.start()
-
+		Autoload.RemovePackages(PACKAGES_REMOVED)
+		
 func _physics_process(delta):
 	# Add the gravity.
 	#if not is_on_floor():
