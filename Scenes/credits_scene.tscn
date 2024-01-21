@@ -41,4 +41,60 @@ size_flags_vertical = 8
 layout_mode = 2
 text = "Back To Menu"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 95.0
+offset_right = 625.0
+offset_bottom = 118.0
+text = "Programming"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 30.0
+offset_right = 83.0
+offset_bottom = 53.0
+text = "Ikkisoad"
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 55.0
+offset_right = 71.0
+offset_bottom = 78.0
+text = "GsX"
+
+[node name="Label3" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 130.0
+offset_right = 123.0
+offset_bottom = 153.0
+text = "OpenGameArt.org"
+
+[node name="Label4" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 159.0
+offset_right = 113.0
+offset_bottom = 182.0
+text = "\"Box\" by Alekei"
+
+[node name="Label5" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -169.0
+offset_top = 189.0
+offset_right = 284.0
+offset_bottom = 212.0
+text = "\"Parallax 2D Backgrounds\" by CraftPix.net 2D Game Assets"
+
+[node name="Label6" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -147.0
+offset_top = 219.0
+offset_right = 254.0
+offset_bottom = 242.0
+text = "\"Little Spaceship Game Character\" by bevouliin.com"
+
 [connection signal="pressed" from="MC/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

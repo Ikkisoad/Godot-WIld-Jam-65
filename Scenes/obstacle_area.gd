@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 	ScrollTheObject(delta)
 
 func ScrollTheObject(deltaTime: float):
-	position.x -= scrollingSpeed * deltaTime
+	position.x -= scrollingSpeed * deltaTime * Autoload.xSpeed
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(PLAYER_GROUP):
