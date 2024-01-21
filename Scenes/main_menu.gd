@@ -15,4 +15,5 @@ func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_packed(creditsScene)
 
 func LoadGameScene() -> void:
+	Autoload.score = 0
 	get_tree().change_scene_to_packed(gameScene)
