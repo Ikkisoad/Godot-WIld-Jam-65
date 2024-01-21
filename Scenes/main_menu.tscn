@@ -49,6 +49,7 @@ layout_mode = 2
 text = "EndlessMode"
 
 [node name="ArcadeButton" type="Button" parent="MC/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "ArcadeMode"
 

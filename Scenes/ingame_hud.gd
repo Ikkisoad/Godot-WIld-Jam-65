@@ -18,6 +18,8 @@ func _ready():
 	Autoload.packageCollected.connect(updateScore)
 	Autoload.died.connect(updateLives)
 	Autoload.packageCollected.connect(updatePackages)
+	Autoload.packageReleased.connect(updatePackages)
+	setVisiblePackages(0,0,0,0,0)
 
 func updateScore():
 	score.text = str(Autoload.score)
@@ -33,13 +35,16 @@ func updateLives():
 			
 func updatePackages():
 	match Autoload.packages:
-		1:
-			package_1.visible = false
-		2:
-			package_2.visible = false
-		3:
-			package_3.visible = false
-		4:
-			package_4.visible = false
-		5:
-			package_5.visible = false
+		0: setVisiblePackages(false,false,false,false,false)
+		1: setVisiblePackages(true,false,false,false,false)
+		2: setVisiblePackages(true,true,false,false,false)
+		3: setVisiblePackages(true,true,true,false,false)
+		4: setVisiblePackages(true,true,true,true,false)
+		5: setVisiblePackages(true,true,true,true,true)
+
+func setVisiblePackages(one, two, three, four, five):
+	package_1.visible = one
+	package_2.visible = two
+	package_3.visible = three
+	package_4.visible = four
+	package_5.visible = five

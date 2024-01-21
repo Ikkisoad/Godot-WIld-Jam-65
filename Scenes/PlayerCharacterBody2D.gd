@@ -12,6 +12,7 @@ const package = preload("res://Scenes/released_pakcage.tscn")
 #Speed up the plane fall
 const GRAVITY_MULTIPLIER = 1.8
 var spawnPosition = Vector2(0,0)
+var overloaded = 1
 @onready var collision_shape_2d = $CollisionShape2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -20,6 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	spawnPosition = global_position
 	Autoload.on_overload.connect(OverloadSequence)
+	Autoload.off_overload.connect(overloadOff)
 
 func _process(delta):
 	if Input.is_action_pressed("release") && timer.is_stopped() && Autoload.packages > 0:
@@ -27,7 +29,7 @@ func _process(delta):
 		releasePackage.global_position.y += 50
 		add_child(releasePackage)
 		timer.start()
-		Autoload.RemovePackages(PACKAGES_REMOVED)
+		Autoload.RemovePackages()
 		
 func _physics_process(delta):
 	# Add the gravity.
@@ -44,12 +46,12 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED / overloaded
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	direction = Input.get_axis("up", "down")
 	if direction:
-		velocity.y = direction * SPEED
+		velocity.y = direction * SPEED / overloaded
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
@@ -77,4 +79,7 @@ func collectPackage():
 	Autoload.collectPackage()
 
 func OverloadSequence():
-	print("Overloaded Code goes here")
+	overloaded = 2
+
+func overloadOff():
+	overloaded = 1

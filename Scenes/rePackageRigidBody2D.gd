@@ -5,11 +5,6 @@ extends RigidBody2D
 func _ready():
 	linear_velocity.x = -195
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func DestroyPackage():
-	print("The package has been collected")
+	Autoload.countScore(50)
 	queue_free()
